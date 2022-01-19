@@ -1,4 +1,5 @@
 // Variables
+var timerEl = document.querySelector("#timer");
 var startButtonEl = document.querySelector("#start-btn");
 var firstpageContainerEL = document.querySelector(".firstpage-container");
 var questionContainerEl = document.querySelector(".quiz-container");
@@ -7,17 +8,35 @@ var answerEl = document.querySelector("#answer-btns");
 
 // Variable Declarations
 let randomQuestions, currentQuestionIndex;
-
+var timeLeft = 75;
+var timeInterval;
+var highscores = [];
+var score = 0;
 
 startButtonEl.addEventListener("click", startGame)
 
 function startGame() {
-
     firstpageContainerEL.classList.add("hide");
     randomQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerEl.classList.remove("hide");
     setQuizQuestion();
+    countdownTimer();
+};
+
+function countdownTimer() {
+    timeInterval = setInterval(function () {
+
+        if (timeLeft > 1) {
+            timerEl.textContent = "Time: " + timeLeft;
+            timeLeft--;
+        }
+        else {
+            timerEl.textContent = ' ';
+            clearInterval(timeInterval);
+            alert("TIMES UP!!");
+        }
+    }, 1000);
 };
 
 function setQuizQuestion() {
