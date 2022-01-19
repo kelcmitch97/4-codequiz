@@ -8,6 +8,7 @@ var answerEl = document.querySelector("#answer-btns");
 // Variable Declarations
 let randomQuestions, currentQuestionIndex;
 
+
 startButtonEl.addEventListener("click", startGame)
 
 function startGame() {
@@ -41,12 +42,37 @@ function showQuestion(question) {
 
 function resetQuiz() {
     while (answerEl.firstChild) {
-        answerEl.removeChild()
+        answerEl.removeChild(answerEl.firstChild);
     }
 };
 
-function selectAnswer() {
+function selectAnswer(event) {
+    var selectedButton = event.target;
+    var correctAnswer = selectedButton.dataset.correct;
+    setStatus(document.body, correct);
+    Array.from(answerEl.children).forEach(button => {
+        setStatus(button, button.dataset.correct);
+    });
 
+    if(randomQuestions.length > currentQuestionIndex + 1) {
+
+    } else {
+        // show highscore
+    }
+};
+
+function setStatus(element, correct) {
+    clearSetStatus(element);
+    if (correct) {
+        element.classList.add("correct");
+    } else {
+        element.classList.add("wrong");
+    }
+};
+
+function clearSetStatus(element) {
+    element.classList.remove("correct");
+    element.classList.remove("wrong");
 }
 
 // Quiz Questions Object

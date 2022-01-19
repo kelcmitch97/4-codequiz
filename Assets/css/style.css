@@ -25,7 +25,17 @@ header {
 :root {
     --light-purple: rgb(209, 63, 209);
     --dark-purple: rgb(68, 12, 68);
+    --correct: rgb(4, 85, 4);
+    --wrong: rgb(117, 3, 3);
 }
+/* 
+.quiz.correct {
+    background-color: var(--correct); 
+}
+
+.quiz.wrong {
+    background-color: var(--wrong); 
+} */
 
 #firstpage-text {
     display: flex;
@@ -63,15 +73,14 @@ header {
     padding: 10px;
 }
 
-.btn:hover {
-    background-color: var(--light-purple);
-}
-
 .start-btn {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 5px;
-    
+}
+
+.start-btn:hover {
+    background-color: var(--light-purple);
 }
 
 .hide {
