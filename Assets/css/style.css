@@ -19,7 +19,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
 }
 
 :root {
@@ -71,6 +71,7 @@ header {
     border: 1px solid white;
     border-radius: 5px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .start-btn {
@@ -80,6 +81,7 @@ header {
 }
 
 .start-btn:hover {
+    cursor: pointer;
     background-color: var(--light-purple);
 }
 
