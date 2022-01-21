@@ -28,14 +28,6 @@ header {
     --correct: rgb(4, 85, 4);
     --wrong: rgb(117, 3, 3);
 }
-/* 
-.quiz.correct {
-    background-color: var(--correct); 
-}
-
-.quiz.wrong {
-    background-color: var(--wrong); 
-} */
 
 #firstpage-text {
     display: flex;
@@ -49,7 +41,7 @@ header {
     text-align: center;
 }
 
-.firstpage-container, .quiz-container {
+.firstpage-container, .quiz-container{
     width: 500px;
     max-width: 80%;
     background-color: rgba(214, 188, 233, 0.966);
@@ -58,6 +50,24 @@ header {
     box-shadow: 0 0 10px 2px;
 }
 
+.quiz-highscore {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 500px;
+    max-width: 80%;
+    background-color: rgba(214, 188, 233, 0.966);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+#highscore-form {
+    display:flex;
+    flex-direction: row;
+}
+
+/* Buttons */
 .btn-list {
     display: grid;
 }

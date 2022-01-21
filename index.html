@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,46 +21,65 @@
         </div>
     </header>
 
-<section class="quiz">
-    <!-- First Page Content -->
-    <section class="firstpage-container">
-        <div id="firstpage-question-title">
-            <h2>Coding Quiz Challenge</h2>
-        </div>
-        <div id="firstpage-text">
-            <p>
-                Try to answer the following code-related questions within the time limit. 
-                Keep in mind that incorrect answers will penalize your score/time 
-                by ten seconds!
-            </p>
-            <button id="start-btn" class="start-btn btn">Start Quiz</button>
-        </div>
-    </section>
-
-    <!-- Quiz Questtions -->
-    <section class="quiz-container hide">
-        <div id="question-container">
-            <div id="question"></div>
-            <div id="answer-btns" class="btn-list">
-                <button class="btn">Answer1</button>
-                <button class="btn">Answer2</button>
-                <button class="btn">Answer3</button>
-                <button class="btn">Answer4</button>
+    <section class="quiz">
+        <!-- First Page Content -->
+        <section class="firstpage-container">
+            <div id="firstpage-question-title">
+                <h2>Coding Quiz Challenge</h2>
             </div>
-        </div>
-    </section>
+            <div id="firstpage-text">
+                <p>
+                    Try to answer the following code-related questions within the time limit.
+                    Keep in mind that incorrect answers will penalize your score/time
+                    by ten seconds!
+                </p>
+                <button id="start-btn" class="start-btn btn">Start Quiz</button>
+            </div>
+        </section>
 
-    <div id="response"></div>
-    </section>
+        <!-- Quiz Questtions -->
+        <section class="quiz-container hide">
+            <div id="question-container">
+                <div id="question"></div>
+                <div id="answer-btns" class="btn-list">
+                    <button class="btn">Answer1</button>
+                    <button class="btn">Answer2</button>
+                    <button class="btn">Answer3</button>
+                    <button class="btn">Answer4</button>
+                </div>
+            </div>
+        </section>
 
-    <!-- HighScores -->
-<section class="quiz-highscore hide">
-    <h2>Quiz Complete!</h2>
-</section>
+        <div id="response"></div>
+
+        <!-- HighScores -->
+        <section class="quiz-highscore hide">
+            <div id="highscore-container">
+                <h2 id="highscore-title">
+                    Quiz Complete!</h2>
+                <p id="highscore-text">
+                    Your final score is score;
+                </p>
+                <div id="highscore-form">
+                    <p id="highscore-form-initials">
+                        Enter initials:
+                    </p>
+                    <form id="initial-form">
+                        <div class="form-group">
+                            <input type="text" name="initals" placeholder="Enter initials" />
+                            <button id="highscore-btn" class="btn" type="submit">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </section>
 
 
 
 
     <script src="./Assets/js/script.js"></script>
 </body>
+
 </html>

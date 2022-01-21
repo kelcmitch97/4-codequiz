@@ -95,11 +95,7 @@ function setQuizQuestion() {
         resetQuiz();
         showQuestion(questions[currentQuestionIndex]);
     } else {
-        questionContainerEl.classList.add("hide");
-        responseEl.classList.add("hide");
-        highscoreEl.classList.remove("hide");
-        clearInterval(timeInterval);
-
+      endQuiz();
     }
 };
 
@@ -144,4 +140,10 @@ function selectAnswer() {
 
 };
 
-
+function endQuiz() {
+    questionContainerEl.classList.add("hide");
+    responseEl.classList.add("hide");
+    highscoreEl.classList.remove("hide");
+    clearInterval(timeInterval);
+    
+}
