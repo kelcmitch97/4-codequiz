@@ -48,9 +48,8 @@
                     <button class="btn">Answer4</button>
                 </div>
             </div>
+            <div id="response"></div>
         </section>
-
-        <div id="response"></div>
 
         <!-- HighScores -->
         <section class="quiz-highscore hide">
@@ -58,26 +57,41 @@
                 <h2 id="highscore-title">
                     Quiz Complete!</h2>
                 <p id="highscore-text">
-                    Your final score is score;
-                </p>
-                <div id="highscore-form">
-                    <p id="highscore-form-initials">
-                        Enter initials:
-                    </p>
-                    <form id="initial-form">
-                        <div class="form-group">
-                            <input type="text" name="initals" placeholder="Enter initials" />
-                            <button id="highscore-btn" class="btn" type="submit">Submit</button>
-                        </div>
-                    </form>
 
-                </div>
+                </p>
+                <p id="errorMsg"></p>
+                <form id="highscore-form">
+                    <div id="highscore-form-initials">
+                        <h3>
+                            Enter initials:
+                        </h3>
+                    </div>
+                    <div id="initial-form">
+
+                        <input type="text" name="initals" id="input-initials" placeholder="Enter initials" />
+
+                    </div>
+                    <button id="highscore-btn" class="btn" type="submit">Submit</button>
+                </form>
             </div>
         </section>
+
+        <!-- Final Page with Highscores -->
+        <section class="finalpage-highscore hide">
+           
+                <h2 id="final-highscore-text">
+                    High scores
+                </h2>
+              
+
+           
+            <div id="display-highscores">
+                <input type="text" readonly id="input-initials-readonly" value="1.">
+            </div>
+            <button id="go-back-btn" class="btn" onclick="init()">Go Back</button>
+            <button id="go-back-btn" class="btn" onclick="clearScore()">Clear high scores</button>
+        </section>
     </section>
-
-
-
 
     <script src="./Assets/js/script.js"></script>
 </body>

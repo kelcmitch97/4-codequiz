@@ -29,6 +29,8 @@ header {
     --wrong: rgb(117, 3, 3);
 }
 
+/* Loading Page styles */
+
 #firstpage-text {
     display: flex;
     flex-direction: column;
@@ -41,7 +43,7 @@ header {
     text-align: center;
 }
 
-.firstpage-container, .quiz-container{
+.firstpage-container, .quiz-container, .finalpage-highscore{
     width: 500px;
     max-width: 80%;
     background-color: rgba(214, 188, 233, 0.966);
@@ -50,7 +52,13 @@ header {
     box-shadow: 0 0 10px 2px;
 }
 
-.quiz-highscore {
+/* Correct/Incorrect Response */
+
+#response {
+    padding: 10px;
+}
+
+.quiz-highscore, .finalpage-content {
     display: flex;
     align-items:center;
     justify-content: center;
@@ -62,9 +70,19 @@ header {
     box-shadow: 0 0 10px 2px;
 }
 
+/* Highscores */
 #highscore-form {
     display:flex;
     flex-direction: row;
+}
+
+#highscore-text {
+    padding-bottom: 10px;
+}
+
+#highscore-title, #final-highscore-text, #display-highscores {
+    padding: 10px;
+
 }
 
 /* Buttons */

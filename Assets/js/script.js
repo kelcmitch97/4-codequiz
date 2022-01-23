@@ -7,12 +7,16 @@ var questionEl = document.querySelector("#question");
 var answerEl = document.querySelector("#answer-btns");
 var responseEl = document.querySelector("#response");
 var highscoreEl = document.querySelector(".quiz-highscore");
+var finalScoreEl = document.querySelector("#highscore-text");
+var submitButtonEl = document.querySelector("#highscore-btn");
+var errorMsg = document.querySelector("#erroMsg");
+var finalHighscoreEl = document.querySelector(".finalpage-highscore");
 
 // Variable Declarations
 let currentQuestionIndex = 0;
 var timeLeft = 75;
 var timeInterval;
-var highscores = [];
+// var highscores = [];
 var score = 0;
 
 // Quiz Questions Object
@@ -124,7 +128,7 @@ function selectAnswer() {
     var selectedButton = this.dataset.correct;
 
     // if correct: true, then display "Correct"
-    if (selectedButton === "true") { //** NEED HELP */
+    if (selectedButton === "true") {
         timeLeft = timeLeft;
         responseEl.setAttribute("style", "color:green");
         responseEl.textContent = "Correct!"
@@ -140,10 +144,60 @@ function selectAnswer() {
 
 };
 
+// Function to end the quiz and display results 
 function endQuiz() {
     questionContainerEl.classList.add("hide");
     responseEl.classList.add("hide");
-    highscoreEl.classList.remove("hide");
+    // highscoreEl.classList.remove("hide");
     clearInterval(timeInterval);
+    displayResults();
+};
+
+// Displays users final score and stores highscore 
+function displayResults() {
+    highscoreEl.classList.remove("hide");
     
-}
+    var highscores = score;
+    localStorage.getItem(highscores);
+
+    var finalScore = document.createElement("p");
+    finalScore.textContent = "Your final score is: " + highscores;
+    finalScoreEl.appendChild(finalScore);
+    localStorage.setItem("Highscores", JSON.stringify(highscores));
+};
+
+// Event listener to store initials 
+document.addEventListener("submit", function(event){
+    event.preventDefault();
+    var yourInitials = document.querySelector("#input-initials");
+    localStorage.setItem("Initials", yourInitials.value);
+
+    finalPage();
+
+});
+
+// function to get highscore and initials from localStorage and display them to user
+function finalPage() {
+    var yourScore = localStorage.getItem("Highscores");
+    var yourInitial = localStorage.getItem("Initials");
+
+    if (yourScore && yourInitial === "") {
+        return;
+    }
+
+    finalHighscoreEl.classList.remove("hide");
+    var initialAndScore = document.querySelector("#input-initials-readonly");
+    initialAndScore.value = yourInitial + ":" + " " + yourScore;
+
+    highscoreEl.classList.add("hide");
+};
+
+// Function to reload the page when the "Go back" button is clicked 
+function init() {
+    location.reload();
+};
+
+
+
+
+
