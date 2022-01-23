@@ -34,7 +34,7 @@ THEN I can save my initials and score
 
 The following image is a look into the Code Quiz webpage that was created. 
 
-![Code Quiz webpage application appearance](assets/images/codequiz.png)
+![Code Quiz webpage appearance](/assets/images/codequiz.png)
 
 
 # Deployment 
